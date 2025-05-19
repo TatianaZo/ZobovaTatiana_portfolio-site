@@ -8,13 +8,70 @@
 </head>
 <body>
     <header>
-        <!-- Навигация будет здесь -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="portfolio.html">Портфолио</a></li>
+                <li><a href="author-materials.html">Авторские Материалы</a></li>
+                <li><a href="about.html">Обо мне</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <!-- Основной контент сайта будет здесь -->
+        <div class="container">
+            <section id="home">
+                <h1>Татьяна Зобова</h1>
+                <p>Unity/VR Разработчик, создаю захватывающие миры и инновационные решения.</p>
+                <!-- Позже здесь может быть фоновое изображение или видео -->
+            </section>
+            <section id="competencies">
+                <h2>Ключевые Компетенции</h2>
+                <div class="competency-blocks">
+                    <div class="competency-block">
+                        <!-- Иконка/изображение -->
+                        <h3>Разработка VR/AR</h3>
+                        <p>Создание интерактивных VR-приложений и AR-опыта на Unity.</p>
+                    </div>
+                    <div class="competency-block">
+                        <!-- Иконка/изображение -->
+                        <h3>Мобильные Игры</h3>
+                        <p>Разработка мобильных игр под Android и iOS, оптимизация производительности.</p>
+                    </div>
+                    <div class="competency-block">
+                        <!-- Иконка/изображение -->
+                        <h3>Unreal Engine Синематики</h3>
+                        <p>Создание впечатляющих синематиков и визуализаций на Unreal Engine.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="mini-game-section">
+                <h2>Поиграй с котиком!</h2>
+                <div id="game-area">
+                    <div id="cat">
+                        <img src="assets/Drosya.png" alt="Кошка" id="cat-image">
+                        <img src="assets/paw.png" alt="Лапка" id="cat-paw-image">
+                    </div>
+                    <!-- Сюда JS будет добавлять "проплывающие" объекты -->
+                </div>
+                <div id="score-board">Счет: <span id="score">0</span></div>
+                <div id="game-over-message" style="display:none;">
+                    <p>Ты проиграла!</p>
+                    <!-- Заглушка для грустной кошки -->
+                    <div id="cat-sad-placeholder" style="width:100px; height:100px; background: #ccc; text-align:center; line-height:100px; margin:10px auto;">Грустный котик</div> 
+                    <button id="restart-button">Начать заново</button>
+                </div>
+                <button id="action-button">Ударить лапкой!</button>
+            </section>
+
+        </div> <!-- Закрываем div.container -->
     </main>
     <footer>
-        <!-- Футер будет здесь -->
+        <div class="container">
+            <p>&copy; 2024 Татьяна Зобова. Все права защищены.</p>
+            <!-- Возможно, дублирование ключевых ссылок или иконок соцсетей -->
+        </div>
     </footer>
     <script src="js/script.js"></script>
 </body>

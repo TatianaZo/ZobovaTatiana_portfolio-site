@@ -1,1 +1,569 @@
- 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif; /* Простой шрифт для начала, потом выберем что-то изысканнее */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    padding-top: 60px; /* Чтобы контент не уезжал под фиксированную шапку, если она будет */
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center; /* Пока пусть будет по центру */
+    /* Если захочешь фиксированную шапку, можно добавить:
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+    */
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li:last-child {
+    margin-right: 0;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для секций */
+section {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff; /* Белый фон для каждой секции */
+}
+
+section h1, section h2, section h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.container {
+    max-width: 960px; /* Ограничим ширину контента для лучшей читаемости */
+    margin: auto;
+    overflow: hidden; /* Для clearfix, если понадобится */
+    padding: 0 20px;
+}
+
+/* Стили для портфолио */
+.project-category {
+    margin-bottom: 30px;
+}
+
+.project-category h3 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.project-card {
+    background: #f9f9f9; /* Слегка отличный фон для карточки */
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px; /* Немного скруглим углы */
+}
+
+.project-card h4 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.project-visual-placeholder {
+    background: #e0e0e0;
+    height: 150px; /* Примерная высота для заглушки */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.project-card p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: #007bff; /* Стандартный синий для ссылок */
+    font-weight: bold;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для авторских материалов */
+.author-material-item {
+    margin-bottom: 30px;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.author-material-item h3 {
+    margin-bottom: 10px;
+}
+
+.book-cover-placeholder {
+    background: #e0e0e0;
+    width: 150px; /* Примерная ширина обложки */
+    height: 220px; /* Примерная высота обложки */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    float: left; /* Обтекание текстом */
+    margin-right: 15px;
+}
+
+.author-material-item p {
+    margin-bottom: 10px;
+}
+
+.author-material-item ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.author-material-item ul li {
+    margin-bottom: 5px;
+}
+
+.author-material-item a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.author-material-item a:hover {
+    text-decoration: underline;
+}
+
+/* Очистка обтекания для элементов после блока с книгой, если необходимо */
+#habr-articles::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Стили для секции "Обо мне" */
+.about-me-content {
+    display: flex; /* Расположим фото и текст рядом */
+    align-items: flex-start; /* Выравнивание по верху */
+}
+
+.about-me-photo-placeholder {
+    background: #e0e0e0;
+    width: 200px;  /* Примерный размер фото */
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    border-radius: 50%; /* Сделаем место для фото круглым */
+    margin-right: 30px;
+    flex-shrink: 0; /* Чтобы фото не сжималось */
+}
+
+.about-me-text p {
+    margin-bottom: 10px;
+}
+
+/* Стили для секции "Контакты" */
+#contact p {
+    margin-bottom: 10px;
+}
+
+#contact a {
+    color: #007bff;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+.social-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.social-links ul li {
+    display: inline-block; /* Расположим иконки в ряд */
+    margin-right: 15px;
+}
+
+.social-links ul li:last-child {
+    margin-right: 0;
+}
+
+/* Стили для футера */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 30px; /* Отступ сверху от последнего блока контента */
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: #fff; /* Если в футере будут ссылки */
+}
+
+/* Стили для обзорной страницы портфолио (portfolio.html) */
+#portfolio-overview h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#portfolio-overview > p {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.portfolio-category-links {
+    display: flex;
+    justify-content: space-around; /* Распределим карточки */
+    flex-wrap: wrap; /* Позволим перенос на новую строку, если не помещаются */
+    gap: 20px; /* Пространство между карточками */
+}
+
+.category-link-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(33.333% - 20px); /* Примерно 3 карточки в ряд, с учетом gap */
+    min-width: 280px; /* Минимальная ширина карточки */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.category-link-card h3 a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.category-link-card h3 a:hover {
+    color: #007bff;
+}
+
+.category-link-card p {
+    font-size: 0.95em;
+    color: #555;
+    margin: 10px 0 20px;
+}
+
+.btn-view-category {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-view-category:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Стили для страниц категорий проектов (vr-projects.html и т.д.) */
+.project-category-page h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.back-to-portfolio-link {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-to-portfolio-link:hover {
+    text-decoration: underline;
+}
+
+/* Обновленные стили для .project-card на страницах категорий */
+.project-card {
+    /* Некоторые стили уже есть, добавляем/изменяем необходимое */
+    position: relative; /* Для позиционирования тега категории */
+    margin-bottom: 30px; /* Увеличим отступ между карточками */
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Немного усилим тень */
+}
+
+.project-category-tag {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/* Если хотим разные цвета для тегов */
+/* Например, для VR */
+#vr-projects-page .project-category-tag {
+    background-color: #28a745; /* Зеленый */
+}
+/* Например, для Mobile */
+#mobile-games-page .project-category-tag {
+    background-color: #ffc107; /* Желтый */
+    color: #333;
+}
+/* Например, для Unreal */
+#unreal-cinematics-page .project-category-tag {
+    background-color: #17a2b8; /* Бирюзовый */
+}
+
+.project-links {
+    margin-top: 15px;
+    text-align: right; /* Кнопки справа */
+}
+
+.btn-project-link {
+    display: inline-block;
+    background-color: #6c757d; /* Серый для второстепенных кнопок */
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-left: 10px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-project-link:hover {
+    background-color: #545b62;
+    color: white;
+}
+
+.btn-project-link:first-child {
+    margin-left: 0;
+}
+
+/* Стили для ссылок "Назад" на страницах деталей */
+.back-to-portfolio-link, /* Уже есть */
+.back-to-overview-link {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-to-portfolio-link:hover,
+.back-to-overview-link:hover {
+    text-decoration: underline;
+}
+
+/* Стили для детальных страниц авторских материалов */
+.author-material-detailed-page h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.book-details .book-cover-placeholder {
+    /* Стили для обложки уже есть, можно уточнить, если нужно */
+    margin-bottom: 20px; /* Добавим отступ снизу, если текст не обтекает */
+}
+
+.book-details p, .book-details ul {
+    margin-bottom: 15px;
+}
+
+.book-details ul {
+    list-style-position: inside;
+}
+
+.habr-articles-list ul {
+    list-style: none; /* Убираем стандартные маркеры */
+    padding-left: 0;
+}
+
+.habr-articles-list ul li {
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.habr-articles-list ul li a {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.habr-articles-list ul li a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.article-summary {
+    font-size: 0.95em;
+    color: #555;
+    margin-top: 8px;
+}
+
+.habr-articles-list .btn-view-category {
+    margin-top: 20px;
+}
+
+/* Стили для мини-игры */
+#mini-game-section {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f0f0f0; /* Слегка выделим фон игры */
+    border-radius: 8px;
+}
+
+#game-area {
+    width: 100%;
+    max-width: 600px; 
+    height: 300px;    
+    background-color: #e0f7fa; 
+    border: 2px solid #00acc1;
+    margin: 20px auto;
+    position: relative; 
+    overflow: hidden;   
+}
+
+#cat {
+    position: absolute;
+    top: 10px; /* Кошка теперь сверху */
+    left: 50%; /* Центрируем кошку */
+    transform: translateX(-50%); /* Точное центрирование */
+    /* Размеры будут зависеть от реального изображения кошки */
+}
+
+/* Бывший #cat-body-placeholder, теперь #cat-image */
+#cat-image {
+    width: 120px; 
+    height: auto; 
+    display: block; 
+}
+
+/* Бывший #cat-paw-placeholder, теперь #cat-paw-image */
+#cat-paw-image {
+    width: 50px;  
+    height: auto; 
+    position: absolute;
+    top: 80px;  /* Положение лапки под кошкой, настрой */
+    left: 50%; /* Центрируем лапку относительно центра кошки */
+    transform: translateX(-50%) rotate(0deg); /* Начальное положение лапки */
+    transform-origin: top center; /* Вращение от "плеча" */
+    transition: transform 0.15s ease-out;
+}
+
+/* Класс для анимации удара лапкой */
+#cat-paw-image.attacking {
+    transform: translateX(-50%) rotate(70deg); /* Опускаем лапку вниз-вперед */
+    /* Возможно, понадобится также translateY для более длинного "удара" */
+}
+
+.game-object {
+    position: absolute;
+    width: 40px; 
+    height: 30px; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    border: 1px dashed #000;
+    bottom: 10px; /* Объекты теперь появляются и движутся снизу */
+    /* top будет удален или переопределен JS при создании */
+}
+
+.shrimp {
+    background-color: #ff7043; /* Оранжево-красный для креветки */
+    /* background-image: url('../assets/shrimp.png'); */
+}
+
+.candy {
+    background-color: #ec407a; /* Розовый для конфетки */
+    /* background-image: url('../assets/candy.png'); */
+}
+
+#score-board {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#game-over-message {
+    padding: 15px;
+    background: #fff3e0;
+    border: 1px solid #ffcc80;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+#action-button, #restart-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#action-button:hover, #restart-button:hover {
+    background-color: #0056b3;
+}
+
+/* Дальнейшие стили будут здесь */ 

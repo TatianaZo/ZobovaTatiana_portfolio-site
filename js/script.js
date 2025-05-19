@@ -18,7 +18,7 @@ let score = 0;
 let gameInterval;
 let objects = []; // Массив для хранения "проплывающих" объектов
 let gameSpeed = 5; // Скорость движения объектов (пикселей за кадр)
-let objectCreationInterval = 2000; // Интервал создания новых объектов (мс)
+let objectCreationInterval = 3500; // Интервал создания новых объектов (мс)
 let isGameOver = false;
 let isAttacking = false; // Флаг, чтобы предотвратить многократное быстрое нажатие
 

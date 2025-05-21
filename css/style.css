@@ -813,6 +813,22 @@ main {
     color: #555;
 }
 
+.btn-watch-cinematic {
+    display: inline-block;
+    background-color: #392147; /* Фиолетовый, как шапка */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-watch-cinematic:hover {
+    background-color: #2a1835; /* Более темный фиолетовый */
+    color: white;
+}
+
 /* Стили для лайтбокса, если он используется */
 .lightbox-overlay {
     position: fixed;

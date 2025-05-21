@@ -8,12 +8,16 @@ body {
     font-family: sans-serif; /* Простой шрифт для начала, потом выберем что-то изысканнее */
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f4;
-    padding-top: 60px; /* Чтобы контент не уезжал под фиксированную шапку, если она будет */
+    background-color: #fff; /* Меняем фон на белый */
+    /* padding-top: 60px; */ /* Убираем, чтобы шапка была сверху без отступа */
+    /* padding-bottom: 50px; */ /* Убираем белую полосу после футера */
+    display: flex;
+    flex-direction: column;
+    min-height: 100%; /* Занимаем как минимум всю высоту экрана */
 }
 
 header {
-    background: #333;
+    background: #392147; /* Новый фиолетовый цвет */
     color: #fff;
     padding: 1rem 0;
     text-align: center; /* Пока пусть будет по центру */
@@ -54,7 +58,25 @@ header nav ul li a:hover {
 section {
     padding: 20px;
     margin-bottom: 20px;
-    background-color: #fff; /* Белый фон для каждой секции */
+    background-color: #fff; /* Белый фон для каждой секции по умолчанию */
+}
+
+/* Специфичный фон для секции Home */
+#home {
+    /* background-color: #ecf0f1; */ /* Очень светлый сине-серый - УБРАНО */
+    padding: 40px 20px; /* Немного увеличим отступы для воздуха */
+    text-align: center; /* Чтобы главный заголовок и текст были по центру */
+}
+
+#home h1 {
+    font-size: 2.4em; /* Возвращаем прежний размер шрифта для имени */
+    color: #E0A800;   /* Возвращаем золотистый цвет */
+    margin-bottom: 0.5em; 
+}
+
+#home p {
+    font-size: 1.2em; /* Уменьшенный размер шрифта для описания */
+    line-height: 1.7; /* Чуть увеличим межстрочный интервал для читаемости */
 }
 
 section h1, section h2, section h3 {
@@ -183,20 +205,50 @@ section h1, section h2, section h3 {
 }
 
 .about-me-photo-placeholder {
-    background: #e0e0e0;
+    /* background: #e0e0e0; */ /* Больше не нужен, так как есть фото */
     width: 200px;  /* Примерный размер фото */
     height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #777;
+    /* display: flex; */ /* Больше не нужен для просто изображения */
+    /* align-items: center; */ /* Больше не нужен */
+    /* justify-content: center; */ /* Больше не нужен */
+    /* color: #777; */ /* Больше не нужен */
     border-radius: 50%; /* Сделаем место для фото круглым */
     margin-right: 30px;
     flex-shrink: 0; /* Чтобы фото не сжималось */
+    overflow: hidden; /* Чтобы изображение не выходило за круглые рамки */
+}
+
+.about-me-photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Масштабирует изображение, чтобы оно заполнило контейнер, сохраняя пропорции, обрезая лишнее */
+    display: block; /* Убирает возможное пустое пространство под изображением */
 }
 
 .about-me-text p {
     margin-bottom: 10px;
+}
+
+.about-me-text ul {
+    list-style-type: disc; /* Или square, circle, или none если будут кастомные маркеры */
+    padding-left: 20px; /* Отступ слева для маркеров списка */
+    margin-bottom: 10px; /* Общий отступ снизу для списка */
+}
+
+.about-me-text ul li {
+    margin-bottom: 8px; /* Отступ между пунктами списка */
+    line-height: 1.7;   /* Немного увеличим межстрочный интервал для читаемости */
+}
+
+/* Стили для ссылок на статьи в разделе "Обо мне" */
+#about-me .about-me-text ul ul a {
+    color: #392147; /* Фиолетовый цвет, как в подвале */
+    text-decoration: underline; /* Добавим подчеркивание для лучшей видимости ссылок */
+    transition: color 0.3s ease;
+}
+
+#about-me .about-me-text ul ul a:hover {
+    color: #000000; /* Черный цвет при наведении */
 }
 
 /* Стили для секции "Контакты" */
@@ -228,7 +280,7 @@ section h1, section h2, section h3 {
 
 /* Стили для футера */
 footer {
-    background: #333;
+    background: #392147; /* Новый фиолетовый цвет */
     color: #fff;
     text-align: center;
     padding: 1.5rem 0;
@@ -272,6 +324,8 @@ footer a {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .category-link-card:hover {
@@ -292,23 +346,30 @@ footer a {
 .category-link-card p {
     font-size: 0.95em;
     color: #555;
-    margin: 10px 0 20px;
+    margin: 10px 0 0;
+    /* flex-grow: 1; */ /* Убрано, кнопка будет выравниваться через margin-top: auto */
 }
 
 .btn-view-category {
     display: inline-block;
-    background-color: #007bff;
-    color: white;
+    background-color: #FFC107; /* Комплементарный желтый */
+    color: #333; /* Темный текст для желтого фона */
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* margin-top: auto; Этот стиль будет применен более специфично ниже */
+}
+
+/* Добавляем специфичный стиль для кнопки внутри карточки портфолио */
+.category-link-card .btn-view-category {
+    margin-top: auto; /* Прижимает кнопку к низу карточки */
 }
 
 .btn-view-category:hover {
-    background-color: #0056b3;
-    color: white;
+    background-color: #E0A800; /* Более темный желтый */
+    color: #333; /* Темный текст для желтого фона */
 }
 
 /* Стили для страниц категорий проектов (vr-projects.html и т.д.) */
@@ -396,14 +457,53 @@ footer a {
 .back-to-overview-link {
     display: inline-block;
     margin-bottom: 25px;
-    color: #007bff;
+    color: #392147; /* Фиолетовый цвет */
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .back-to-portfolio-link:hover,
 .back-to-overview-link:hover {
+    color: #000000; /* Черный цвет при наведении */
     text-decoration: underline;
+}
+
+/* Стили для оглавления книги */
+.table-of-contents {
+    list-style-type: none; /* Убираем стандартные маркеры основного списка */
+    padding-left: 0; /* Убираем стандартный отступ */
+    margin-top: 15px; /* Отступ сверху для всего блока оглавления */
+}
+
+.table-of-contents > li > strong {
+    font-size: 1.1em; /* Делаем названия глав чуть крупнее */
+    margin-bottom: 5px; /* Небольшой отступ под названием главы */
+    display: block; /* Чтобы margin-bottom сработал */
+}
+
+.table-of-contents ul {
+    /* list-style-type: decimal; */ /* Решила убрать явную нумерацию, т.к. она есть в тексте */
+    list-style-type: none; /* Убираем маркеры и для вложенных списков по умолчанию */
+    margin-top: 5px;
+    padding-left: 20px; /* Отступ для вложенных списков глав */
+}
+
+.table-of-contents ul ul {
+    /* list-style-type: lower-alpha; */
+    padding-left: 25px; /* Еще больший отступ */
+}
+
+.table-of-contents ul ul ul {
+    /* list-style-type: disc; */ /* Маркеры-точки для самого глубокого уровня (например, Инкапсуляция) */
+    list-style-type: none; /* Убираем маркеры-точки */
+    padding-left: 30px;
+}
+
+.table-of-contents li {
+    list-style-type: none; /* Убираем маркеры для всех li в оглавлении */
+    margin-bottom: 8px; /* Отступ между пунктами */
+    line-height: 1.5; /* Немного улучшим читаемость строк */
 }
 
 /* Стили для детальных страниц авторских материалов */
@@ -458,5 +558,355 @@ footer a {
 
 .habr-articles-list .btn-view-category {
     margin-top: 20px;
+}
+
+.habr-articles-list .btn-view-category {
+    color: #000000; /* Черный текст для кнопки на странице статей Хабра */
+}
+
+.habr-articles-list .btn-view-category:hover {
+    color: #000000; /* Черный текст при наведении, если фон тоже меняется */
+}
+
+/* Стили для Тетриса */
+#tetris-game-section {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff; /* Такой же фон, как у .competency-block */
+    border: 1px solid #ddd; /* Такая же рамка */
+    border-radius: 8px; /* Такой же радиус скругления */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Такая же тень */
+    margin-bottom: 20px; /* Добавим для консистентности с другими блоками */
+}
+
+#tetris-game-section h2 {
+    color: #E0A800; /* Желтый/золотистый цвет для заголовка Тетриса */
+    margin-bottom: 20px; /* Добавим немного отступа снизу */
+    text-align: center; /* Изменено на center для выравнивания по центру игровой зоны */
+}
+
+/* Контейнер для заголовка тетриса, чтобы он был выровнен с игровым полем */
+.tetris-layout {
+    /* display: flex; */ 
+    position: relative; 
+    max-width: 700px; 
+    /* margin: 0 auto; */ /* Убираем центрирование */
+    margin-left: 35%; /* Увеличили отступ слева для большего смещения вправо */
+    margin-right: 0; /* Можно убрать, если нужно, чтобы правый край был по содержимому */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.tetris-game-area {
+    /* display: flex; */ /* Убираем, если не нужен flex для canvas + info */
+    /* flex-direction: column; */
+    /* align-items: center; */ 
+    width: 306px; /* Ширина canvas (300px) + его рамки (2*3px) */
+    margin: 0 auto; /* Центрируем игровую зону */
+    float: left; /* Обтекание слева */
+}
+
+#tetris-board {
+    border: 3px solid #333; 
+    background-color: #f7f7f7; 
+    display: block; 
+    margin-bottom: 15px; 
+}
+
+#tetris-info {
+     text-align: center; /* Центрируем текст и кнопку под канвасом */
+}
+
+#tetris-info p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#tetris-start-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #28a745; /* Зеленый для кнопки старта */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#tetris-start-button:hover {
+    background-color: #218838;
+}
+
+.tetris-controls-info {
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    text-align: left; 
+    width: 250px; /* Фиксированная ширина для блока инструкций */
+    /* align-self: stretch; */ /* Не нужно без flex */
+    float: left; /* Обтекание слева, станет справа от игровой зоны */
+    margin-left: 20px; /* Отступ от игровой зоны */
+    margin-top: 20px; /* Небольшой отступ сверху для блока управления */
+}
+
+.tetris-controls-info h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center; /* Заголовок по центру */
+    color: #E0A800; /* Желтый/золотистый цвет */
+}
+
+.tetris-controls-info p {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+/* clearfix для .tetris-layout, чтобы содержать плавающие элементы */
+.tetris-layout::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Стили для ключевых компетенций */
+.competency-blocks {
+    display: flex; /* Располагаем блоки в ряд */
+    justify-content: flex-start; /* Выравниваем по началу */
+    flex-wrap: wrap; /* Позволяем перенос, если ширина экрана мала */
+    gap: 20px; /* Пространство между блоками */
+}
+
+.competency-block {
+    background: #fff; 
+    border: 1px solid #ddd; 
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px; 
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 220px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Добавлена анимация */
+}
+
+.competency-block:hover {
+    transform: translateY(-5px); /* Анимация при наведении */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Анимация тени при наведении */
+}
+
+.competency-block:nth-child(1) {
+    /* background-color: lightcoral !important; */ /* Убираем цвет */
+}
+.competency-block:nth-child(2) {
+    /* background-color: lightblue !important; */ /* Убираем цвет */
+}
+.competency-block:nth-child(3) {
+    /* background-color: lightgreen !important; */ /* Убираем цвет */
+}
+.competency-block:last-child {
+    margin-right: 0; /* Убираем отступ у последнего элемента */
+}
+
+.competency-block h3 {
+    margin-top: 0; 
+    /* color: #E0A800; */ /* Убираем старый цвет */
+    color: #333; /* Новый цвет, как в портфолио */
+    font-size: 1.5em; /* Новый размер шрифта, как в портфолио */
+    margin-bottom: 10px; /* Добавляем отступ снизу, как у заголовка в портфолио (косвенно через margin у p) */
+}
+
+/* Стили для абзацев в блоках компетенций */
+.competency-block p {
+    line-height: 1.6;
+    /* margin-bottom: 15px; */ /* Этот отступ теперь будет определяться пустым <p>&nbsp;</p> и общим flex-распределением */
+    flex-grow: 0; 
+    font-size: 0.95em; /* Новый размер шрифта, как в портфолио */
+    color: #555; /* Новый цвет, как в портфолио */
+    margin-top: 0; /* Убедимся, что нет лишнего верхнего отступа */
+    margin-bottom: 0; /* Убираем отступ, если он был, для лучшего контроля через p>&nbsp;</p> или flex */
+}
+
+/* Стили для заголовка секции Ключевые Компетенции */
+#competencies h2 {
+    color: #E0A800;  /* Желтый/золотистый цвет */
+}
+
+/* Стили для обзорной страницы Авторских Материалов (author-materials.html) */
+#author-materials-overview h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#author-materials-overview > p {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+/* Стили для заголовка на странице обзора книг */
+#books-overview-page h2 {
+    text-align: center;
+    margin-bottom: 30px; /* Такой же отступ, как и у других подобных заголовков */
+}
+
+/* Увеличим пространство для карточек на странице авторских материалов */
+#author-materials-overview .portfolio-category-links {
+    gap: 30px; /* Увеличиваем пространство между карточками */
+    justify-content: center; /* Центрируем, если их всего две */
+}
+
+#author-materials-overview .category-link-card {
+    width: calc(45% - 30px); /* Чтобы две карточки занимали больше места с учетом увеличенного gap */
+    min-width: 280px; /* Минимальная ширина карточки */
+}
+
+html {
+    height: 100%; /* Чтобы body мог использовать 100% высоты */
+}
+
+main {
+    flex-grow: 1; /* Основной контент будет занимать все доступное пространство */
+    /* Тут могут быть и другие стили для main, если они есть */
+}
+
+/* Стили для страницы Unreal Синематиков */
+.cinematics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Адаптивная сетка */
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.cinematic-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.cinematic-thumbnail {
+    width: 100%;
+    max-height: 200px; /* Ограничим высоту для единообразия */
+    object-fit: cover; /* Масштабирует и обрезает изображение */
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+}
+
+.cinematic-item h4 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.3em;
+}
+
+.cinematic-item p {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 15px;
+    min-height: 50px; /* Чтобы карточки были примерно одной высоты, если описания разной длины */
+}
+
+.btn-watch-cinematic {
+    display: inline-block;
+    background-color: #392147; /* Фиолетовый, как шапка */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-watch-cinematic:hover {
+    background-color: #2a1835; /* Более темный фиолетовый */
+    color: white;
+}
+
+/* Стили для Лайтбокса Синематиков */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Сильное затемнение */
+    display: flex; /* Используем flex для центрирования контента */
+    align-items: center;
+    justify-content: center;
+    z-index: 2000; /* Поверх всего остального */
+    padding: 20px; /* Отступы на случай очень маленьких экранов */
+}
+
+.lightbox-content {
+    position: relative;
+    background-color: #000; /* Черный фон для области видео, чтобы не было белых краев вокруг video */
+    padding: 0; /* Убираем паддинг, если видео занимает всю область */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#lightbox-video-player {
+    display: block; /* Чтобы не было лишних отступов под видео */
+    max-width: 100%; /* Адаптивная ширина */
+    max-height: calc(90vh - 40px); /* Адаптивная высота, учитывая отступы overlay */
+    border: none; /* Убираем возможную рамку у видео */
+}
+
+.lightbox-close-btn {
+    position: absolute;
+    top: -15px; /* Располагаем чуть выше и правее контента */
+    right: -15px;
+    background: white;
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 24px;
+    line-height: 35px; /* Для вертикального центрирования крестика */
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    font-weight: bold;
+}
+
+.lightbox-close-btn:hover {
+    background: #f0f0f0;
+    color: #000;
+}
+
+/* Специфичные стили для кнопки "Купить/Читать" на странице книги */
+#book-page div.book-details a.btn-view-category {
+    background-color: #FFC107 !important; /* Желтый фон */
+    color: #392147 !important; /* Фиолетовый текст */
+}
+
+#book-page div.book-details a.btn-view-category:hover {
+    background-color: #FFC107 !important; /* Желтый фон остается */
+    color: #000000 !important; /* Черный текст при наведении */
+}
+
+/* Стили для ключевых компетенций */
+#competencies {
+    /* background-color: #ecf0f1; */ /* Добавлен фон - УБРАНО */
+    /* padding: 20px; */ /* Добавлены внутренние отступы для секции - УБРАНО */
+    /* border-radius: 8px; */ /* Добавлено скругление углов для секции - УБРАНО */
+    margin-bottom: 20px; /* Стандартный отступ снизу */
+}
+
+.competency-blocks {
+    display: flex; /* Располагаем блоки в ряд */
+    justify-content: flex-start; /* Выравниваем по началу */
+    flex-wrap: wrap; /* Позволяем перенос, если ширина экрана мала */
+    gap: 20px; /* Пространство между блоками */
 }
 

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои Книги - Татьяна Зобова</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="portfolio.html">Портфолио</a></li>
+                <li><a href="author-materials.html">Авторские Материалы</a></li>
+                <li><a href="about.html">Обо мне</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <section id="books-overview-page"> <!- Используем такой же id как на habr-articles-page для возможного единообразия стилей ->
+                <a href="author-materials.html" class="back-to-overview-link">&larr; Назад к Авторским Материалам</a>
+                <h2>Мои Книги</h2>
+                
+                <div class="portfolio-category-links"> <!- Используем существующий класс для отображения карточек ->
+                    <div class="category-link-card"> <!- Карточка для книги ->
+                        <h3><a href="book-vr-application.html">Создание VR-приложения</a></h3>
+                        <p>Это руководство для создания VR-игр. Оно включает пошаговые инструкции по разработке игры, а также подробные объяснения языка программирования C#.</p>
+                        <a href="book-vr-application.html" class="btn-view-category">Подробнее о книге</a>
+                    </div>
+                    <!- Сюда можно будет добавлять другие книги ->
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Татьяна Зобова. Все права защищены.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html> 

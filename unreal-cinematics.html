@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unreal Синематики - Татьяна Зобова</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="portfolio.html">Портфолио</a></li>
+                <li><a href="author-materials.html">Авторские Материалы</a></li>
+                <li><a href="about.html">Обо мне</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <section id="unreal-cinematics-page" class="project-category-page">
+                <a href="portfolio.html" class="back-to-portfolio-link">&larr; Назад к обзору портфолио</a>
+                <h2>Unreal Синематики</h2>
+
+                <div class="cinematics-grid">
+                    <div class="cinematic-item">
+                        <img src="assets/Car.PNG" alt="Кадр из синематика 1" class="cinematic-thumbnail">
+                        <h4>Синематик 1: Загадочный Лес</h4>
+                        <p>Краткое описание первого впечатляющего синематика, созданного в Unreal Engine.</p>
+                        <a href="#" data-video-src="assets/F_21.mp4" class="btn-watch-cinematic">Посмотреть видео</a>
+                    </div>
+
+                    <div class="cinematic-item">
+                        <img src="assets/2.PNG" alt="Кадр из синематика 2" class="cinematic-thumbnail">
+                        <h4>Синематик 2: Город Будущего</h4>
+                        <p>Исследование футуристического мегаполиса в этом захватывающем синематике.</p>
+                        <a href="#" data-video-src="assets/F_1.mp4" class="btn-watch-cinematic">Посмотреть видео</a>
+                    </div>
+                </div>
+                <!-- Можно добавить больше синематиков сюда -->
+            </section>
+        </div> <!-- Закрываем div.container -->
+    </main>
+
+    <!-- Структура лайтбокса -->
+    <div id="cinematic-lightbox" class="lightbox-overlay" style="display: none;">
+        <div class="lightbox-content">
+            <video id="lightbox-video-player" width="80%" height="auto" controls autoplay muted playsinline></video>
+            <button id="lightbox-close" class="lightbox-close-btn">&times;</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Татьяна Зобова. Все права защищены.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html> 

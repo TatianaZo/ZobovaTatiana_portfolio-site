@@ -888,6 +888,13 @@ main {
 /* Специфичные стили для карточек VR-проектов */
 #vr-projects-page .project-card {
     padding: 25px; /* Увеличиваем внутренний отступ карточки */
+    text-align: center; /* Гарантируем центрирование текста */
+}
+
+#vr-projects-page .project-card h4 {
+    margin-bottom: 15px; /* Отступ под заголовком перед фото */
+    font-size: 1.1em; /* Можно немного настроить размер шрифта заголовка */
+    color: #333; /* Цвет заголовка, если нужно переопределить */
 }
 
 #vr-projects-page .project-card img {
@@ -897,6 +904,32 @@ main {
     /* max-height: 220px; Убираем ограничение по максимальной высоте */
     /* object-fit: cover; Убираем масштабирование и обрезку */
     border-radius: 4px; /* Небольшое скругление углов у самого изображения */
-    margin-bottom: 15px; /* Отступ снизу перед заголовком h4 */
+    /* margin-bottom: 15px; Убираем, так как фото теперь не последнее перед кнопкой */
+}
+
+.project-links {
+    margin-top: 15px;
+    text-align: right; /* Кнопки справа */
+}
+
+.btn-project-link {
+    display: inline-block;
+    background-color: #6c757d; /* Серый для второстепенных кнопок */
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-left: 10px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-project-link:hover {
+    background-color: #545b62;
+    color: white;
+}
+
+.btn-project-link:first-child {
+    margin-left: 0;
 }
 

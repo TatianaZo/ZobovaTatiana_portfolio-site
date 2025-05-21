@@ -790,6 +790,8 @@ main {
     padding: 20px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex; /* Добавляем flex */
+    flex-direction: column; /* Направление в столбик */
 }
 
 .cinematic-thumbnail {
@@ -811,6 +813,7 @@ main {
     font-size: 0.9em;
     margin-bottom: 15px;
     color: #555;
+    flex-grow: 1; /* Позволим параграфу занимать доступное место, чтобы кнопка была внизу */
 }
 
 /* Стили для лайтбокса, если он используется */

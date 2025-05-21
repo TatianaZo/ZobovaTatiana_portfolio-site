@@ -992,3 +992,12 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.game-screenshots-grid video.game-screenshot {
+    width: 100%; /* Занимать всю ширину ячейки грида */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    max-height: 300px; /* Ограничим максимальную высоту, чтобы не было слишком большим */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #000; /* Черный фон на случай, если постер не загрузится или для самой панели управления */
+}
+

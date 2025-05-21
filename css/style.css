@@ -937,6 +937,9 @@ main {
 #games-page .project-card {
     padding: 25px; 
     text-align: center; 
+    display: flex; /* Добавляем flex */
+    flex-direction: column; /* Направление в столбик */
+    justify-content: space-between; /* Распределяем пространство, чтобы кнопка была внизу */
 }
 
 #games-page .project-card h4 {
@@ -950,5 +953,28 @@ main {
     width: 100%;    
     height: auto;   
     border-radius: 4px; 
+    margin-bottom: 15px; /* Добавляем отступ под фото перед кнопкой */
+}
+
+#games-page .project-card .btn-view-category {
+    margin-top: auto; /* Прижимает кнопку к низу */
+    /* Если нужно еще немного отступа от элемента выше (например, фото), 
+       можно добавить padding-top к этому элементу или margin-bottom к элементу выше.
+       margin-bottom: 15px для img уже должен дать отступ. */
+}
+
+.project-links {
+    margin-top: 15px;
+    text-align: right; /* Кнопки справа */
+}
+
+/* Специфичный цвет текста для кнопок деталей игры */
+#games-page .project-card .btn-game-details {
+    color: #392147; /* Фиолетовый текст */
+}
+
+#games-page .project-card .btn-game-details:hover {
+    color: #000000; /* Черный текст при наведении */
+    /* Фон остается от .btn-view-category:hover (темно-желтый) */
 }
 

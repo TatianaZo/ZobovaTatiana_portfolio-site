@@ -933,3 +933,22 @@ main {
     margin-left: 0;
 }
 
+/* Специфичные стили для карточек на странице Игр */
+#games-page .project-card {
+    padding: 25px; 
+    text-align: center; 
+}
+
+#games-page .project-card h4 {
+    margin-bottom: 15px; 
+    font-size: 1.1em; 
+    color: #333; 
+}
+
+#games-page .project-card img {
+    display: block; 
+    width: 100%;    
+    height: auto;   
+    border-radius: 4px; 
+}
+

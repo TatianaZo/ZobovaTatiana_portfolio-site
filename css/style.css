@@ -809,28 +809,11 @@ main {
 
 .cinematic-item p {
     font-size: 0.9em;
-    color: #555;
     margin-bottom: 15px;
-    min-height: 50px; /* Чтобы карточки были примерно одной высоты, если описания разной длины */
+    color: #555;
 }
 
-.btn-watch-cinematic {
-    display: inline-block;
-    background-color: #392147; /* Фиолетовый, как шапка */
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.btn-watch-cinematic:hover {
-    background-color: #2a1835; /* Более темный фиолетовый */
-    color: white;
-}
-
-/* Стили для Лайтбокса Синематиков */
+/* Стили для лайтбокса, если он используется */
 .lightbox-overlay {
     position: fixed;
     top: 0;
@@ -882,17 +865,6 @@ main {
 .lightbox-close-btn:hover {
     background: #f0f0f0;
     color: #000;
-}
-
-/* Специфичные стили для кнопки "Купить/Читать" на странице книги */
-#book-page div.book-details a.btn-view-category {
-    background-color: #FFC107 !important; /* Желтый фон */
-    color: #392147 !important; /* Фиолетовый текст */
-}
-
-#book-page div.book-details a.btn-view-category:hover {
-    background-color: #FFC107 !important; /* Желтый фон остается */
-    color: #000000 !important; /* Черный текст при наведении */
 }
 
 /* Стили для ключевых компетенций */

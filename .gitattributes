@@ -1,4 +1,3 @@
 *.mp4 filter=lfs diff=lfs merge=lfs -text
 assets/Синематик[[:space:]]1.mp4 filter=lfs diff=lfs merge=lfs -text
 assets/Синематик[[:space:]]2.mp4 filter=lfs diff=lfs merge=lfs -text
-assets/heavenly[[:space:]]baby[[:space:]]seal4.mp4 filter=lfs diff=lfs merge=lfs -text

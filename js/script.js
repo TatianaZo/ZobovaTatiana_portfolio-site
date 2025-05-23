@@ -378,21 +378,24 @@ document.addEventListener('DOMContentLoaded', () => {
     watchButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
-            const videoSrc = button.getAttribute('data-video-src');
-            if (videoSrc) {
-                videoPlayer.setAttribute('src', videoSrc);
+            const videoId = button.getAttribute('data-video-src'); // Теперь это ID видео
+            if (videoId) {
+                // Формируем URL для встраивания YouTube видео
+                // Добавляем autoplay=1 для автоматического воспроизведения и rel=0 для скрытия похожих видео
+                const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`; 
+                videoPlayer.setAttribute('src', embedUrl);
                 lightbox.style.display = 'flex'; 
-                // videoPlayer.play(); // Атрибут autoplay в теге <video> должен справиться
+                // videoPlayer.play(); // Для iframe это не нужно, autoplay в URL
             } else {
-                console.error('Video source not found for button:', button);
+                console.error('Video ID not found for button:', button);
             }
         });
     });
 
     function closeLightbox() {
         lightbox.style.display = 'none';
-        videoPlayer.pause();
-        videoPlayer.removeAttribute('src'); // Важно для остановки загрузки и освобождения ресурсов
+        // videoPlayer.pause(); // Для iframe не так актуально
+        videoPlayer.setAttribute('src', ''); // Очищаем src у iframe, чтобы остановить видео и загрузку
     }
 
     closeButton.addEventListener('click', closeLightbox);

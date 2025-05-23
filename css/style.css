@@ -144,10 +144,11 @@ section h1, section h2, section h3 {
 /* Стили для авторских материалов */
 .author-material-item {
     margin-bottom: 30px;
-    padding: 15px;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 20px; /* Немного увеличим паддинг для соответствия */
+    background: #fff; /* Меняем фон на белый */
+    border: 1px solid #ddd; /* Такая же рамка, как у тетриса */
+    border-radius: 8px; /* Такой же радиус, как у тетриса */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Такая же тень, как у тетриса */
 }
 
 .author-material-item h3 {
@@ -1104,16 +1105,131 @@ main {
 }
 
 #about-me .ar-projects-block ul ul li a {
-    font-weight: normal; 
+    color: #392147; /* Фиолетовый цвет, как в подвале */
+    text-decoration: underline; /* Добавим подчеркивание для лучшей видимости ссылок */
+    transition: color 0.3s ease;
+}
+
+#about-me .ar-projects-block ul ul li a:hover {
+    color: #E0A800; /* Пример: золотистый при наведении */
 }
 
 #other-works-page .project-card h3 a:hover {
-    color: #000; /* Черный при наведении */
+    color: #E0A800; /* Пример: золотистый при наведении */
 }
 
-/* Стили для акцентных заголовков на страницах "Обо мне" и "Контакты" (добавлено для гарантии) */
-#about-me h4,
-#contact h2 {
-    color: #E0A800; /* Акцентный желтый */
+/* Стили для кнопки "Назад к Портфолио" на страницах деталей проекта */
+#logiccraft-details .back-to-portfolio-link,
+#heavenly-baby-seal-details .back-to-portfolio-link,
+#arcade-race-details .back-to-portfolio-link,
+#book-vr-application-details .back-to-portfolio-link { /* Добавлено для книги */
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #392147;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#logiccraft-details .back-to-portfolio-link:hover,
+#heavenly-baby-seal-details .back-to-portfolio-link:hover,
+#arcade-race-details .back-to-portfolio-link:hover,
+#book-vr-application-details .back-to-portfolio-link:hover { /* Добавлено для книги */
+    background-color: #e0e0e0;
+}
+
+/* Базовые медиа-запросы для адаптивности */
+
+/* Для экранов шириной до 768px (планшеты и большие телефоны) */
+@media (max-width: 768px) {
+    header nav ul li {
+        display: block; /* Отображаем пункты меню друг под другом */
+        margin-right: 0;
+        margin-bottom: 10px; /* Добавляем отступ снизу */
+        text-align: center; /* Центрируем текст пунктов меню */
+    }
+
+    header nav ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    .container {
+        padding: 0 15px; /* Уменьшаем отступы по бокам для контейнера */
+    }
+
+    #home h1 {
+        font-size: 2em; /* Уменьшаем шрифт заголовка на главной */
+    }
+
+    #home p {
+        font-size: 1em; /* Уменьшаем шрифт текста на главной */
+    }
+
+    .competency-blocks,
+    .tetris-layout {
+        flex-direction: column; /* Блоки компетенций и тетрис теперь в столбик */
+    }
+
+    .competency-block {
+        margin-bottom: 20px; /* Добавляем отступ между блоками компетенций */
+    }
+
+    .tetris-game-area,
+    .tetris-controls-info {
+        width: 100%; /* Растягиваем на всю ширину */
+        margin-bottom: 20px;
+    }
+
+    #tetris-board {
+        width: 100%; /* Делаем поле тетриса адаптивным по ширине */
+        height: auto; /* Высота будет подстраиваться */
+    }
+
+    .about-me-content {
+        flex-direction: column; /* Фото и текст друг под другом */
+        align-items: center; /* Центрируем фото */
+    }
+
+    .about-me-photo-placeholder {
+        margin-right: 0;
+        margin-bottom: 20px; /* Отступ снизу для фото */
+        width: 150px; /* Уменьшаем фото для мобильных */
+        height: 150px;
+    }
+
+    .cinematics-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Адаптивная сетка для синематиков */
+    }
+}
+
+/* Для экранов шириной до 480px (маленькие телефоны) */
+@media (max-width: 480px) {
+    #home h1 {
+        font-size: 1.8em;
+    }
+
+    header {
+        padding: 0.5rem 0;
+    }
+    
+    .project-card,
+    .author-material-item {
+        padding: 10px;
+    }
+
+    .project-card h4,
+    .author-material-item h3 {
+        font-size: 1.1em;
+    }
+
+    .book-cover-placeholder {
+        float: none; /* Убираем обтекание для обложки */
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100px;
+        height: 150px;
+    }
 }
 

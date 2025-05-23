@@ -337,10 +337,12 @@ footer a {
     text-decoration: none;
     color: #333;
     font-size: 1.5em;
+    transition: color 0.3s ease;
 }
 
 .category-link-card h3 a:hover {
-    color: #007bff;
+    color: #392147 !important; /* Фиолетовый цвет при наведении с повышенным приоритетом */
+    text-decoration: none;
 }
 
 .category-link-card p {
@@ -660,14 +662,56 @@ footer a {
 
 .tetris-controls-info p {
     margin-bottom: 5px;
-    font-size: 0.9em;
 }
 
-/* clearfix для .tetris-layout, чтобы содержать плавающие элементы */
-.tetris-layout::after {
+.tetris-layout::after { /* Для clearfix, если вдруг понадобится */
     content: "";
-    clear: both;
     display: table;
+    clear: both;
+}
+
+/* Стили для нового серого блока и ссылок в нем */
+.ar-projects-block {
+    background-color: #fff; /* Белый фон, как у Тетриса */
+    padding: 20px;
+    margin-top: 30px; /* Отступ сверху от предыдущего блока */
+    margin-bottom: 20px;
+    border: 1px solid #ddd; /* Серая рамка, как у Тетриса */
+    border-radius: 8px; /* Скругленные углы, как у Тетриса */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Тень, как у Тетриса */
+}
+
+.ar-projects-block h3 {
+    color: #333; /* Темный цвет для заголовка блока */
+    margin-bottom: 15px;
+}
+
+.ar-projects-block ul {
+    list-style: none; /* Убираем стандартные маркеры */
+    padding-left: 0; /* Убираем стандартный отступ */
+}
+
+.ar-projects-block ul li {
+    margin-bottom: 10px; /* Отступ между пунктами списка */
+}
+
+.ar-projects-block ul li strong {
+    display: block; /* Название проекта на отдельной строке */
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.ar-projects-block ul li a {
+    color: #392147; /* Фирменный фиолетовый цвет */
+    text-decoration: underline; /* Подчеркивание по умолчанию */
+    display: inline-block; /* Чтобы отступы работали корректно */
+    margin-right: 15px; /* Отступ между ссылками, если их несколько в строке для одного проекта */
+    margin-bottom: 5px; /* Отступ снизу для каждой ссылки */
+}
+
+.ar-projects-block ul li a:hover {
+    color: #000000; /* Черный цвет при наведении */
+    /* text-decoration: underline;  Это уже есть по умолчанию, можно оставить или убрать, если нет другого эффекта на ховер */
 }
 
 /* Стили для ключевых компетенций */
@@ -698,6 +742,11 @@ footer a {
 .competency-block:hover {
     transform: translateY(-5px); /* Анимация при наведении */
     box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Анимация тени при наведении */
+}
+
+/* Добавляем изменение цвета заголовка h3 при наведении на competency-block */
+.competency-block:hover h3 {
+    color: #392147 !important; /* Фиолетовый цвет */
 }
 
 .competency-block:nth-child(1) {
@@ -992,12 +1041,79 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.game-screenshots-grid video.game-screenshot {
-    width: 100%; /* Занимать всю ширину ячейки грида */
-    height: auto; /* Автоматическая высота для сохранения пропорций */
-    max-height: 300px; /* Ограничим максимальную высоту, чтобы не было слишком большим */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #000; /* Черный фон на случай, если постер не загрузится или для самой панели управления */
+/* Стили для увеличения изображений на странице аркадной гонки */
+.arcade-screenshots-grid {
+    grid-template-columns: repeat(auto-fit, minmax(438px, 1fr));
+}
+
+/* Стили для заголовков H4 в блоках на странице "Обо мне" */
+#about-me .ar-projects-block h4 {
+    color: #E0A800; /* Фирменный желтый цвет */
+    margin-bottom: 15px; /* Стандартный отступ для заголовков */
+}
+
+/* Улучшение читаемости блока "Ключевые достижения и опыт" на странице "Обо мне" */
+#about-me .about-me-text .ar-projects-block:first-of-type > ul > li {
+    margin-bottom: 18px; /* Увеличим отступ между основными пунктами */
+}
+
+#about-me .about-me-text .ar-projects-block:first-of-type > ul > li:last-child {
+    margin-bottom: 0; /* Убрать отступ у последнего пункта в списке достижений */
+}
+
+/* Вложенные списки в блоке "Ключевые достижения и опыт" (статьи, обязанности) */
+#about-me .about-me-text .ar-projects-block:first-of-type ul ul {
+    list-style-type: disc; /* Вернем маркеры для вложенных списков */
+    padding-left: 20px;    /* Отступ слева для вложенных списков */
+    margin-top: 8px;       /* Небольшой отступ сверху от текста родительского li */
+}
+
+#about-me .about-me-text .ar-projects-block:first-of-type ul ul li {
+    margin-bottom: 6px;    /* Уменьшим отступ для элементов вложенного списка */
+    /* Примечание: стили для самих ссылок <a> внутри этих li уже заданы глобально для .ar-projects-block */
+}
+
+/* Ссылки на статьи в блоке "Ключевые достижения и опыт" делаем менее жирными */
+#about-me .about-me-text .ar-projects-block:first-of-type ul ul li a {
+    font-weight: normal; 
+}
+
+/* Стили для акцентных заголовков на страницах "Обо мне" и "Контакты" */
+#about-me h4,
+#contact h2 { /* Заголовки для подсветки желтым */
+    color: #E0A800; /* Акцентный желтый */
+}
+
+#about-me .ar-projects-block ul li {
+    margin-bottom: 18px; /* Увеличим отступ между основными пунктами */
+}
+
+#about-me .ar-projects-block ul li:last-child {
+    margin-bottom: 0; /* Убрать отступ у последнего пункта в списке достижений */
+}
+
+#about-me .ar-projects-block ul ul {
+    list-style-type: disc; /* Вернем маркеры для вложенных списков */
+    padding-left: 20px;    /* Отступ слева для вложенных списков */
+    margin-top: 8px;       /* Небольшой отступ сверху от текста родительского li */
+}
+
+#about-me .ar-projects-block ul ul li {
+    margin-bottom: 6px;    /* Уменьшим отступ для элементов вложенного списка */
+    /* Примечание: стили для самих ссылок <a> внутри этих li уже заданы глобально для .ar-projects-block */
+}
+
+#about-me .ar-projects-block ul ul li a {
+    font-weight: normal; 
+}
+
+#other-works-page .project-card h3 a:hover {
+    color: #000; /* Черный при наведении */
+}
+
+/* Стили для акцентных заголовков на страницах "Обо мне" и "Контакты" (добавлено для гарантии) */
+#about-me h4,
+#contact h2 {
+    color: #E0A800; /* Акцентный желтый */
 }
 

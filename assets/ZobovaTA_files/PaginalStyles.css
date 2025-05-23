@@ -1,0 +1,281 @@
+﻿aside.footnote > hr:only-child {
+    display: none
+}
+
+aside.endNotes > hr:only-child {
+    display: none
+}
+
+section.section {
+    margin: 10pt auto 0 auto;
+    border: 1pt solid #d3d3d3;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,.1);
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    position: relative;
+}
+
+header.header, footer.footer, aside.footnote {
+    flex: none
+}
+
+article.content {
+    overflow: hidden;
+    flex: 0 1 100%;
+    word-wrap: break-word
+}
+
+section[data-page-type=A3_Portrait] {
+    width: 842pt;
+    min-height: 1190pt
+}
+
+section[data-page-type=A4_Portrait] {
+    width: 595pt;
+    min-height: 842pt
+}
+
+section[data-page-type=A5_Portrait] {
+    width: 420pt;
+    min-height: 595pt
+}
+
+section[data-page-type=A6_Portrait] {
+    width: 298pt;
+    min-height: 420pt
+}
+
+section[data-page-type=A7_Portrait] {
+    width: 209pt;
+    min-height: 298pt
+}
+
+section[data-page-type=A3_Landscape] {
+    width: 1190pt;
+    min-height: 842pt
+}
+
+section[data-page-type=A4_Landscape] {
+    width: 842pt;
+    min-height: 595pt
+}
+
+section[data-page-type=A5_Landscape] {
+    width: 595pt;
+    min-height: 420pt;
+    max-height: 420pt
+}
+
+section[data-page-type=A6_Landscape] {
+    width: 420pt;
+    min-height: 298pt
+}
+
+section[data-page-type=A7_Landscape] {
+    width: 298pt;
+    min-height: 209pt
+}
+
+section[data-page-type=B4_Portrait] {
+    width: 709pt;
+    min-height: 1001pt
+}
+
+section[data-page-type=B5_Portrait] {
+    width: 499pt;
+    min-height: 709pt
+}
+
+section[data-page-type=B4_Landscape] {
+    width: 1001pt;
+    min-height: 709pt
+}
+
+section[data-page-type=B5_Landscape] {
+    width: 709pt;
+    min-height: 499pt
+}
+
+section[data-page-type=Executive_Portrait] {
+    width: 522pt;
+    min-height: 755pt
+}
+
+section[data-page-type=Folio_Portrait] {
+    width: 576pt;
+    min-height: 935pt
+}
+
+section[data-page-type=Ledger_Portrait] {
+    width: 791pt;
+    min-height: 1223pt
+}
+
+section[data-page-type=Legal_Portrait] {
+    width: 612pt;
+    min-height: 1007pt
+}
+
+section[data-page-type=Letter_Portrait] {
+    width: 612pt;
+    min-height: 791pt
+}
+
+section[data-page-type=EnvelopeDL_Portrait] {
+    width: 312pt;
+    min-height: 624pt
+}
+
+section[data-page-type=Quarto_Portrait] {
+    width: 576pt;
+    min-height: 720pt
+}
+
+section[data-page-type=Statement_Portrait] {
+    width: 612pt;
+    min-height: 396pt
+}
+
+section[data-page-type=Tabloid_Portrait] {
+    width: 791pt;
+    min-height: 1223pt
+}
+
+section[data-page-type=Paper10x14_Portrait] {
+    width: 720pt;
+    min-height: 1007pt
+}
+
+section[data-page-type=Paper11x17_Portrait] {
+    width: 791pt;
+    min-height: 1223pt
+}
+
+section[data-page-type=Executive_Landscape] {
+    width: 755pt;
+    min-height: 522pt
+}
+
+section[data-page-type=Folio_Landscape] {
+    width: 935pt;
+    min-height: 576pt
+}
+
+section[data-page-type=Ledger_Landscape] {
+    width: 1223pt;
+    min-height: 791pt
+}
+
+section[data-page-type=Legal_Landscape] {
+    width: 1007pt;
+    min-height: 612pt
+}
+
+section[data-page-type=Letter_Landscape] {
+    width: 791pt;
+    min-height: 612pt
+}
+
+section[data-page-type=EnvelopeDL_Landscape] {
+    width: 624pt;
+    min-height: 312pt
+}
+
+section[data-page-type=Quarto_Landscape] {
+    width: 720pt;
+    min-height: 576pt
+}
+
+section[data-page-type=Statement_Landscape] {
+    width: 396pt;
+    min-height: 612pt
+}
+
+section[data-page-type=Tabloid_Landscape] {
+    width: 1223pt;
+    min-height: 791pt
+}
+
+section[data-page-type=Paper10x14_Landscape] {
+    width: 1007pt;
+    min-height: 720pt
+}
+
+section[data-page-type=Paper11x17_Landscape] {
+    width: 1223pt;
+    min-height: 791pt
+}
+
+main.documentMainContent section.section.FirstHeader:nth-of-type(1) header.header div.HeaderEven {
+    display: none
+}
+
+main.documentMainContent section.section.FirstHeader:nth-of-type(1) header.header div.HeaderFirst {
+    display: block !important
+}
+
+main.documentMainContent section.section.FirstHeader:nth-of-type(1)  header.header div.HeaderPrimary {
+    display: none
+}
+
+main.documentMainContent section.section.FirstHeader:nth-of-type(1) footer.footer div.FooterFirst {
+    display: block !important
+}
+
+main.documentMainContent section.section.FirstHeader:nth-of-type(1) footer.footer div.FooterEven {
+    display: none
+}
+
+main.documentMainContent section.section.FirstHeader:nth-of-type(1) footer.footer div.FooterPrimary {
+    display: none
+}
+
+main.documentMainContent section.section.EvenHeader:nth-of-type(2n)  header.header div.HeaderFirst {
+    display: none
+}
+
+main.documentMainContent section.section.EvenHeader:nth-of-type(2n)  header.header div.HeaderPrimary {
+    display: none
+}
+
+main.documentMainContent section.section.EvenHeader:nth-of-type(2n+1)  header.header div.HeaderFirst {
+    display: none
+}
+
+main.documentMainContent section.section.EvenHeader:nth-of-type(2n+1)  header.header div.HeaderEven {
+    display: none
+}
+
+main.documentMainContent section.section.EvenHeader:nth-of-type(2n) footer.footer div.FooterFirst {
+    display: none
+}
+
+main.documentMainContent div.section.EvenHeader:nth-of-type(2n) footer.footer div.FooterPrimary {
+    display: none
+}
+
+main.documentMainContent div.section.EvenHeader:nth-of-type(2n+1) footer.footer div.FooterFirst {
+    display: none
+}
+
+main.documentMainContent section.section.EvenHeader:nth-of-type(2n+1) footer.footer div.FooterEven {
+    display: none
+}
+
+main.documentMainContent section.section.PrimaryHeader  header.header div.HeaderFirst {
+    display: none
+}
+
+main.documentMainContent section.section.PrimaryHeader  header.header div.HeaderEven {
+    display: none
+}
+
+main.documentMainContent section.section.PrimaryHeader footer.footer div.FooterFirst {
+    display: none
+}
+
+main.documentMainContent section.section.PrimaryHeader footer.footer div.FooterEven {
+    display: none
+}

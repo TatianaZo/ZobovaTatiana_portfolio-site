@@ -947,6 +947,14 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(438px, 1fr));
 }
 
+/* Ссылка на игру на странице описания */
+.game-play-link {
+    margin: 20px 0;
+}
+.game-play-link a {
+    color: #E0A800;
+}
+
 /* Стили для заголовков H4 в блоках на странице "Обо мне" */
 #about-me .ar-projects-block h4 {
     color: #E0A800; /* Фирменный желтый цвет */
